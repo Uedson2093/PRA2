@@ -1,0 +1,54 @@
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+@Entity(tableName = "Health")
+public class Health {
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    @ColumnInfo(name = "healthId")
+    private int mId;
+    @Nullable
+    @ColumnInfo(name = "disease")
+    private String mDisease;
+    public int getId() {
+        return mId;
+    }
+    public void setId(@NonNull int id) {
+        mId = id;
+    }
+    public String getDisease() {
+        return mDisease;
+    }
+    public void setDisease(@Nullable String disease) {
+        mDisease = disease;
+    }
+    public String getSpecialist() {
+        return mSpecialist;
+    }
+    public void setSpecialist(String specialist) {
+        mSpecialist = specialist;
+    }
+    public String getCreationDate() {
+        return mCreationDate;
+    }
+    public void setCreationDate(String creationDate) {
+        mCreationDate = creationDate;
+    }
+    private String mSpecialist;
+    private String mCreationDate;
+    public int getRating() {
+        return mRating;
+    }
+    public void setRating(int rating) {
+        mRating = rating;
+    }
+    private int mRating;
+    public Health(String disease, String specialist, int rating, String creationDate) {
+        mDisease = disease;
+        mSpecialist = specialist;
+        mRating = rating;
+        mCreationDate = creationDate;
+    }
+}
